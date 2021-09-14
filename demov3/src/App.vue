@@ -1,45 +1,24 @@
 <template>
-  <h2>个人信息</h2>
-  <p>姓名:{{ name }}</p>
-  <p>姓名:{{ age }}</p>
-  <p>类型:{{ job.type }}</p>
-  <p>薪资:{{ job.salary }}</p>
-  <p><button @click="changeInfo">修改信息</button></p>
+  <Cpn1 msg="大家好" time="2021/09/14" @hello="test">
+    <p>哈哈哈</p>
+  </Cpn1>
 </template>
 
 <script>
-import { ref, reactive } from "vue";
+// import { ref, reactive } from "vue";
+import Cpn1 from "./components/Cpn1.vue";
 export default {
   name: "App",
   data() {
-    return {
-      text: "占位",
-    };
+    return {};
   },
-  components: {},
+  components: { Cpn1 },
   setup() {
-    let name = ref("张三");
-    let age = ref(34);
-    let job = reactive({
-      type: "fe",
-      salary: 20,
-    });
-    let job2 = ref({
-      type: "fe",
-      salary: 20,
-    });
-    console.log(job, job2);
-    function changeInfo() {
-      name.value = "李斯";
-      setInterval(() => age.value++, 800);
-      job.salary++;
+    // console.log(props, context);
+    function test(value) {
+      console.log("get a emit " + value);
     }
-    return {
-      name,
-      age,
-      changeInfo,
-      job,
-    };
+    return { test };
   },
 };
 </script>
