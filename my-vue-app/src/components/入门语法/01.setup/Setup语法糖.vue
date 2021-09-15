@@ -19,7 +19,6 @@ export default{
   },
   setup(props:any){
     console.log(props.title);
-    
   }
 }
 </script>
