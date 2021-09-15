@@ -1,18 +1,25 @@
 <template>
+  <!-- <Counter />
   <Cpn1 msg="大家好" time="2021/09/14" @hello="test">
-    <p>哈哈哈</p>
-  </Cpn1>
+    <p>大家好(来自插槽的信息)</p>
+  </Cpn1> -->
+  <LifeCycle />
 </template>
 
 <script>
 // import { ref, reactive } from "vue";
-import Cpn1 from "./components/Cpn1.vue";
+// import Cpn1 from "./components/Cpn1.vue";
+// import Counter from "./components/Counter.vue";
+import LifeCycle from "./components/LifeCycle.vue";
 export default {
   name: "App",
   data() {
     return {};
   },
-  components: { Cpn1 },
+  components: {
+    //  Cpn1, Counter,
+    LifeCycle,
+  },
   setup() {
     // console.log(props, context);
     function test(value) {

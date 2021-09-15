@@ -20,7 +20,12 @@ export default {
     console.log("props", props);
     let name = ref("张三");
     let age = ref(34);
-    let aage = computed(() => age.value + 1);
+    let aage = computed({
+      get: () => age.value.value + 1,
+      set: (val) => {
+        age.value.value = val - 1;
+      },
+    });
 
     function send() {
       context.emit("hello", age.value);
