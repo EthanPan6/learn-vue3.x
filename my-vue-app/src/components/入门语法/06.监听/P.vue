@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import {ref,reactive,watch} from 'vue';
+import {ref,reactive,watch,watchEffect} from 'vue';
 const count=ref(0);
 function increatment(){
   count.value++
 }
 watch(count,(n,o)=>{
   console.log(n,o);
-  
+})
+watchEffect(()=>{
+  console.log(count.value)
 })
 const user=reactive({
   name:'张三',
